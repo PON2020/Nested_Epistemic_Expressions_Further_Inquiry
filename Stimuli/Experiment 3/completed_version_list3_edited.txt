@@ -1,0 +1,680 @@
+1. This is a multiple choice question. Every question starts with a
+number followed by a period. There should be a blank line between
+the question text and the choices.
+a
+b
+c
+d
+[[Block:My Block Name]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:1_high]]
+A group of friends has lost their 11th member. They take bets on where she might be, and decide that she probably had run off to take a nap.
+[[Choices]]
+6 friends bet she had run off to take a nap.
+7 friends bet she had run off to take a nap.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:2_low]]
+Jenny and her 9 friends have a gambling problem. They take bets on whether their food is going to arrive in the next half hour, and decide that it may arrive soon.
+[[Choices]]
+6 people bet that the food is going to arrive soon.
+8 people bet that the food is going to arrive soon.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:3_high_low]]
+10 club members vote on who to elect treasurer. At the end, they think that Flora definitely may become treasurer.
+[[Choices]]
+6 members think Flora is definitely going to become treasurer.
+8 members think Flora may become treasurer. 
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:4_low_high]]
+10 colleagues are trying to figure out where to have their bi-annual company dinner, after a discussion, it seems like they might definitely go to Chili’s.
+[[Choices]]
+6 members say they definitely support going to Chili’s.
+8 members say they might support going to Chili’s.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:5_high]]
+The board is hiring a new secretary. 10 members meet to discuss a particular candidate, and in the end, it seems that Suzan is certainly going to get the job.
+[[Choices]]
+6 members are in favor of Suzan getting the job.
+8 members are in favor of Suzan getting the job.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:6_low]]
+10 men on the Elk Lodge committee are voting on the chili contest. After discussing the nuanced flavors of the various chilies, it seems that the jerky chili might win.
+[[Choices]]
+6 men agree that the jerky chili tastes the best.
+7 men agree that the jerky chili tastes the best.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:7_high_low]]
+The 10 Girl Scouts of Troop 47 are voting on the Girl of the Year. After discussing the merits of each girl's actions, it seems that Daisy certainly may receive the honor.
+[[Choices]]
+6 girls say they certainly want Daisy to receive the honor.
+8 girls say they may want Daisy to receive the honor.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:8_low_high]]
+The 10 Boy Scouts of Troop 19 are voting on the best campground. After discussing the merits of each option, it seems that Elk Ridge Lake may certainly be voted the best.
+[[Choices]]
+6 boys believe Elk Ridge Lake is certainly the best.
+8 boys believe Elk Ridge Lake may be the best.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:9_high]]
+Ms. Marselle’s 10 kindergarteners are arguing about which book to read for story time. When Ms. Marselle finally gets them to quiet down, it seems that they are definitely going to agree to read "Annie and the Regular-sized Carrot".
+[[Choices]]
+6 kindergarteners say they agree to read “Annie and the Regular-sized Carrot".
+8 kindergarteners say they agree to read “Annie and the Regular-sized Carrot".
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:10_low]]
+10 children are trying to decide what to do on a very hot day, they debate, and it seems they might go swimming.
+[[Choices]]
+6 children want to go swimming.
+7 children want to go swimming. 
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:11_high_low]]
+10 friends are trying to decide what to bring to the picnic, and they decide they probably might bring burgers.
+[[Choices]]
+6 friends agree they probably support bringing burgers.
+7 friends agree they might support bringing burgers.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:12_low_high]]
+10 people get stuck in an elevator, and discuss what the best fruit is to pass the time. They conclude that watermelon might certainly be the best fruit.
+[[Choices]]
+6 people conclude that watermelon is certainly the best fruit.
+8 people conclude that watermelon might be the best fruit.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:13_high]]
+A group of 10 friends are deciding whether or not to buy tickets to the new Jonas Brothers concert. After further discussion, they are certainly going to go to the concert.
+[[Choices]]
+6 friends support going to the concert.
+8 friends support going to the concert.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:14_low]]
+A family of 10 is deciding where to go on vacation. They ultimately decide that they might visit Hawaii.
+[[Choices]]
+6 family members are going to vote for Hawaii.
+8 family members are going to vote for Hawaii.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:15_high_low]]
+10 volunteers are working at the adoption center when someone comes in with a stray cat for them. The volunteers are deciding what they’re going to name the cat. They decide that they definitely may name the cat Toonces.
+[[Choices]]
+6 volunteers say that they definitely agree to name the cat Toonces.
+8 volunteers say that they may agree to name the cat Toonces.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:16_low_high]]
+A 10 person group is trying to come up with a name for their band. After much deliberation, they may definitely name themselves The Yellow Jackets.
+[[Choices]]
+6 group members agree they definitely want to name themselves The Yellow Jackets.
+8 group members agree they may want to name themselves The Yellow Jackets.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:17_high]]
+10 students need to elect their class president. By general consensus, they are definitely going to elect Alex.
+[[Choices]]
+6 students are going to vote for Alex.
+8 students are going to vote for Alex.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:18_low]]
+10 students on the student council must vote for someone to be Homecoming Queen. They may vote for Natalie.
+[[Choices]]
+6 students are going to vote for Natalie.
+8 students are going to vote for Natalie.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:19_high_low]]
+10 coworkers are choosing which book they would bring if they were stranded on a desert island. They say it certainly might be “The Swiss Family Robinson”.
+[[Choices]]
+6 coworkers admit they are certainly going to choose “The Swiss Family Robinson”.
+8 coworkers admit they might choose “The Swiss Family Robinson”.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:20_low_high]]
+10 lab members are choosing which day would work best for their end of year party. After they all respond, it seems that Tuesday may definitely work for the party.
+[[Choices]]
+6 lab members agree that Tuesday definitely works for the party.
+8 lab members agree Tuesday may work for the party.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:21_high]]
+10 ladies on the church committee are voting on the best pie competition. After deliberation, Mrs. Gherkin’s blueberry pie is certainly going to win the purple ribbon.
+[[Choices]]
+6 ladies on the church committee are going to vote for Mrs. Gherkin’s blueberry pie.
+8 ladies on the church committee are going to vote for Mrs. Gherkin’s blueberry pie.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:22_low]]
+At the dog show a committee of 10 judges discusses which dog should win Crowd Favorite, and concludes that Kibbles the wiener dog may get the prize.
+[[Choices]]
+6 judges conclude Kibbles deserves the prize. 
+8 judges conclude Kibbles deserves the prize.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:23_high_low]]
+The office has a budget excess and 10 employees need to decide what supplies they most need. After arguing, it seems that they certainly might get a new copy machine.
+[[Choices]]
+6 employees decide they certainly need a new copy machine.
+8 employees decide they might need a new copy machine. 
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:24_low_high]]
+One of the programs in the Parks and Recreation department is going to lose funding, 10 heads of department meet to discuss which is the least valuable, and conclude that they might certainly shut down animal control.
+[[Choices]]
+6 heads of department conclude that animal control is certainly the least valuable.
+8 heads of department conclude that animal control might be the least valuable.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:25_high]]
+10 friends are graduating from college and have to decide where to have their party. As the day gets closer, it seems like they are definitely going to rent an Airbnb.
+[[Choices]]
+6 friends agree they are going to support renting an Airbnb.
+8 friends agree they are going to support renting an Airbnb.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:26_low]]
+10 family members are trying to choose where to have their reunion. They decide to take a vote, and it seems they may have it at the park.
+[[Choices]]
+6 family members vote to have it at the park.
+8 family members vote to have it at the park.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:27_high_low]]
+10 friends want to go see a new movie, but are having a hard time deciding which one. They talk it over, and it seems they definitely might go to see "Endgame".
+[[Choices]]
+6 friends claim they are definitely in favor of going to see "Endgame".
+8 friends claim they might be in favor of going to see "Endgame".
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:28_low_high]]
+At the state fair, 10 judges vote on the best looking pig, and decide it might definitely be Swiney-Todd.
+[[Choices]]
+6 judges decide it is definitely Swiney-Todd.
+8 judges decide it might be Swiney-Todd.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:1_filler_yes]]
+10 friends plan a dinner party, and are trying to decide what main course to provide. Based on the general discussion, it seems they are not going to have beet stew.
+[[Choices]]
+7 friends agree that they should have beet stew.
+9 friends agree that they should not have beet stew.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:2_filler_no]]
+The 10 members of the disciplinary committee meet to discuss a student they are considering expelling from school. At the end of the meeting, they are still undecided.
+[[Choices]]
+5 members agree to expel the student.
+6 members agree not to expel the student.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:3_filler_yes]]
+The UC Davis Book Club consists of 10 members. Every week, the club reads a different book and discusses it. They had a discussion on which book they are going to read next, and based on the result, they may not read "Looking for Alaska".
+[[Choices]]
+7 members don't want to read "Looking for Alaska".
+9 members want to read "Looking for Alaska".
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:4_filler_no]]
+A group of 10 math teachers are deciding what textbook to use for the school year. They are not sure what textbook they’re going to use.
+[[Choices]]
+3 math teachers know what textbook to use. 
+5 math teachers are not sure what textbook to use.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:5_filler_yes]]
+A 10 person a cappella group is deciding what song to sing at their Winter Showcase. After coming to a conclusion, it’s not likely they’ll sing “Old Town Road”.
+[[Choices]]
+5 members vote to sing "Old Town Road". 
+9 members vote not to sing "Old Town Road".
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:6_filler_yes]]
+10 players on the West High School soccer team are in charge of choosing who’s going to receive the MVP award at the end of the season. Based on their results, it’s doubtful that Cameron is going to win the award.
+[[Choices]]
+2 players choose Cameron to win the MVP award. 
+9 players choose Cameron to win the MVP award.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:7_filler_no]]
+10 third-grade teachers are deciding where to have their next class field trip. After much deliberation, they’re not sure where they’re going to go.
+[[Choices]]
+4 third-grade teachers have picked a location.
+5 third-grade teachers have not yet picked a location. 
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:8_filler_yes]]
+A group of 10 friends are at Disneyland for the day. They’re trying to decide which ride to go on first. After much deliberation, it’s impossible that they’ll go on Thunder Mountain first.
+[[Choices]]
+5 friends do want to ride Thunder Mountain first.
+9 friends do not want to ride Thunder Mountain first. 
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:9_filler_yes]]
+10 friends are signing up for a class at the ARC. After discussing which class to sign up for, it’s not likely that they’ll take a yoga class.
+[[Choices]]
+7 friends do not want to sign up for a yoga class. 
+8 friends want to sign up for a yoga class.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:10_filler_yes]]
+10 managers of a potato chip company are deciding what new flavor they should create. Based on their results, it’s doubtful they’ll create a bacon flavored chip.
+[[Choices]]
+7 managers do want to create a bacon flavored chip. 
+8 managers don't want to create a bacon flavored chip.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:11_filler_yes]]
+A family of 10 lives and works on a farm together. They have the option to bring a new pig to their farm. After much discussion, it’s doubtful they’ll bring in the new pig.
+[[Choices]]
+7 family members vote not to bring the new pig. 
+9 family members vote to bring the new pig.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:12_filler_yes]]
+A group of 10 friends are deciding what type of movie to watch on Netflix, comedy or action. After much deliberation, it is impossible that they are going to watch a comedy.
+[[Choices]]
+6 friends want to watch a comedy.
+9 friends want to watch an action movie. 
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:13_filler_yes]]
+Gabriella is deciding whether or not she wants to participate in the East High School Spring Musical. She asks her 10 friends for their opinions. After much debate, it’s unlikely that Gabriella is going to participate in the Spring Musical.
+[[Choices]]
+3 friends think Gabriella should participate. 
+8 friends think Gabriella should participate.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:14_filler_yes]]
+10 friends are trying to plan a party and they need a theme. After discussing different theme options, they are not going to have an 80’s themed party.
+[[Choices]]
+5 friends do want an 80's themed party.
+9 friends do not want an 80's themed party. 
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:15_filler_yes]]
+10 students are working on a project for their marine biology class. The project involves giving a presentation about any marine invertebrate they want. The group is trying to decide on which invertebrate they want to use for their project. After discussing each invertebrate, it’s unlikely they are going to do their project on sea cucumbers.
+[[Choices]]
+7 group members vote to do their project on sea cucumbers. 
+8 group members vote to not do their project on sea cucumbers.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:16_filler_no]]
+Henry and 10 of his friends are playing truth or dare. When it’s Henry’s turn he picks dare. His 10 friends are deciding whether to make Henry jump on his desk or to make him sing loudly. After much discussion, the friends are unsure what they want Henry to do.
+[[Choices]]
+3 friends want Henry to jump on his desk. 
+4 friends want Henry to sing loudly.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:17_filler_yes]]
+Spongebob and 9 of his friends are deciding what to do for the day. After much deliberation, it’s not likely that they’ll go jellyfishing.
+[[Choices]]
+8 friends would not like to go jellyfishing. 
+9 friends would like to go jellyfishing.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:18_filler_yes]]
+10 friends are graduating and are trying to plan a graduation trip for the summer. Based on the results from this discussion, it’s impossible that they are going to go to the Bahamas.
+[[Choices]]
+8 friends do want to go to the Bahamas. 
+9 friends do not want to go to the Bahamas.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:19_filler_yes]]
+10 summer camp counselors are trying to decide what activity their campers are going to do after pool time. They come to a conclusion, and it’s not possible that their campers are going to make friendship bracelets after pool time.
+[[Choices]]
+6 camp counselors are in favor of making friendship bracelets. 
+9 camp counselors are not in favor of making friendship bracelets.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:20_filler_yes]]
+10 second-graders are deciding what they want to do during recess. They discuss their options, and it’s not likely they’re going to play on the jungle gym during recess.
+[[Choices]]
+2 second-graders want to play on the jungle gym.
+8 second-graders want to play on the jungle gym. 
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:21_filler_yes]]
+A 10-person kickball team is trying to come up with a team name. After much deliberation, it is doubtful that they are going to name themselves the “Kickballers”.
+[[Choices]]
+7 team members do not want the name "Kickballers". 
+8 team members want the name "Kickballers".
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:22_filler_no]]
+10 friends are participating in a baking competition and are trying to decide what to bake. After much discussion, they’re unsure what they’re going to make.
+[[Choices]]
+2 friends vote to bake brownies. 
+3 friends vote to bake cookies.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:23_filler_yes]]
+Tia wants to dye her hair but can’t decide what color she wants to dye it. She asks her 9 friends for help. After discussing different colors, it’s impossible that Tia is going to dye her hair pink.
+[[Choices]]
+Tia and 8 friends do not want to dye her hair pink. 
+Tia and 8 friends want to dye her hair pink.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:24_filler_no]]
+A family of 10 is trying to decide what they want Grandma to make for dinner. They discuss what they want, and ultimately aren’t sure what they want Grandma to make.
+[[Choices]]
+3 family members have decided what they want Grandma to make. 
+6 family members have not decided what they want Grandma to make.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:25_filler_no]]
+10 friends want to plan a vacation. They try to decide between going to the beach or going to the mountains. In the end, they remain undecided.
+[[Choices]]
+2 friends want to go to the beach. 
+3 friends want to go to the mountains.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:26_filler_no]]
+A committee of 10 discusses the best candidate for a job opening, and at the end of their session, they still have not reached a decision.
+[[Choices]]
+3 committee members have chosen a candidate. 
+8 committee members have not chosen a candidate.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:27_filler_yes]]
+10 voters gather to discuss which new mayoral candidate to endorse. At the end, it seems impossible they will choose the younger candidate.
+[[Choices]]
+6 voters support endorsing the younger candidate. 
+9 voters do not support endorsing the younger candidate.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:28_filler_yes]]
+10 carol singers try to decide which Christmas song to sing first on their route. At the end, it seems that they might not choose “Silent Night”.
+[[Choices]]
+7 carol singers do want to sing "Silent Night" first.
+7 carol singers do not want to sing "Silent Night" first. 
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:29_filler_yes]]
+A family of 10 is trying to decide where to have their beach BBQ. After talking it over, it is unlikely that they are going to have it at Swenson beach.
+[[Choices]]
+7 family members do not prefer Swenson beach. 
+8 family members do prefer Swenson beach.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:30_filler_yes]]
+10 lab members try and decide on an activity for their end of the year party. After discussing, it is not possible that they are going to watch golf.
+[[Choices]]
+7 lab members want to watch golf.
+9 lab members do not want to watch golf. 
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:31_filler_yes]]
+10 fourth-graders try to decide which play to put on for the end of the year show. After talking about it, they might not perform “Mr. Henry’s Tropical Adventure”.
+[[Choices]]
+7 fourth-graders prefer not to perform “Mr. Henry’s Tropical Adventure”. 
+8 fourth-graders prefer to perform “Mr. Henry’s Tropical Adventure”.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:32_filler_no]]
+10 classmates have to present on a topic for their final project, and now must decide on a topic to present on. After a lengthy group chat, it seems they still have made no decision.
+[[Choices]]
+6 classmates are still undecided. 
+7 classmates have decided on a topic.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:33_filler_no]]
+A group of 10 students are working on studying for a final and they try to decide whether to meet up to study in the morning or in the afternoon. After talking about it, they still don’t have a time that works.
+[[Choices]]
+2 students can meet in the morning. 
+3 students can meet in the afternoon.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:34_filler_no]]
+A group of 10 book club members try and decide on a book to read. After a heated discussion, they have yet to decide on a book.
+[[Choices]]
+7 club members have decided on a book.
+8 club members have not decided on a book. 
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:35_filler_no]]
+10 members of the Aquatones are deciding what song to sing at their next a cappella event. After discussing, the Aquatones remain unsure what song to sing.
+[[Choices]]
+8 Aquatones are still deciding what song to sing.
+9 Aquatones have decided what song to sing. 
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:36_filler_yes]]
+10 people working at a rodeo-themed bar are deciding whether to install a mechanical bull. After discussing, they don’t think they are going to install it.
+[[Choices]]
+7 people agree to install the mechanical bull. 
+9 people agree not to install the mechanical bull.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:37_filler_yes]]
+10 players on the volleyball team are in charge of choosing who’s going to receive the Most Improved award. Based on their results, it seems unlikely that Katy is going to win the award.
+[[Choices]]
+1 player chooses Katy to win the award.
+8 players choose Katy to win the award.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:29_high]]
+10 members of a fraternity are deciding what to invest in. After discussion, it seems they are probably buying a houseboat.
+[[Choices]]
+6 members back buying a houseboat. 
+7 members back buying a houseboat.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:30_low]]
+10 roommates are figuring out where they are going out for dinner. After much deliberation, the group might go to Thai Canteen.
+[[Choices]]
+6 roommates say they are going to Thai Canteen.
+7 roommates say they are going to Thai Canteen. 
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:31_high_low]]
+10 employees are trying to decide what to give their boss for her birthday. After some debate, it seems they probably may give their boss a gift certificate.
+[[Choices]]
+6 employees agree they probably support giving their boss a gift certificate.
+7 employees agree they may support giving their boss a gift certificate.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:32_low_high]]
+A large family just adopted a puppy. 10 family members want to choose the name for their new puppy together. After discussing, they may probably name the puppy Maslow.
+[[Choices]]
+6 family members admit they probably want to name the puppy Maslow.
+7 family members admit they may want to name the puppy Maslow.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:33_high]]
+10 friends are making plans for the weekend. After some debate, they are probably going to go to the beach.
+[[Choices]]
+6 friends want to go to the beach.
+7 friends want to go to the beach.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:34_low]]
+10 students decide to form a study group. They discuss what day of the week to meet, and it seems they may meet on Tuesdays.
+[[Choices]]
+6 students prefer to meet on Tuesdays.
+7 students prefer to meet on Tuesdays.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:35_high_low]]
+10 singers want to perform a musical together. They vote to decide which musical to perform, and it seems they probably may perform “Chicago”.
+[[Choices]]
+6 singers say they are probably going to vote to perform “Chicago”.
+7 singers say they may vote to perform “Chicago”.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:36_low_high]]
+10 neighbors are deciding how to repair their neighborhood. After discussing, they may probably choose to fill the potholes.
+[[Choices]]
+6 neighbors agree they are probably in favor of filling the potholes.
+7 neighbors agree they may be in favor of filling the potholes.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:37_high]]
+10 teachers in the history department discuss choosing a movie to show their students. After some debate, they are probably going to show “Gladiator” to their students.
+[[Choices]]
+6 teachers are for showing “Gladiator”.
+7 teachers are for showing “Gladiator”.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:38_low]]
+10 children want to have a tea party together. They vote on what kind of tea to drink, and may choose peppermint.
+[[Choices]]
+6 children choose peppermint.
+7 children choose peppermint. 
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:39_high_low]]
+10 passengers on a train are guessing how long it is going to take to reach their destination. At the end of the debate, they certainly may agree that it is going to take an hour.
+[[Choices]]
+6 passengers believe it is certainly going to take an hour. 
+8 passengers believe it may take an hour.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:40_low_high]]
+A group of 10 hikers come to a fork in the trail. They discuss which path looks like more fun to take, and it seems they may certainly hike on the path going downhill.
+[[Choices]]
+6 hikers think they are certainly going to hike on the path going downhill.
+8 hikers think they may hike on the path going downhill.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:41_high]]
+10 librarians are discussing which novelist to invite for a book reading. It seems they are certainly going to invite Sue Monk Kidd.
+[[Choices]]
+6 librarians vote to invite Sue Monk Kidd.
+8 librarians vote to invite Sue Monk Kidd.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:42_low]]
+A group of 10 coworkers want to go on vacation together. After discussing, they might all go to Paris together.
+[[Choices]]
+6 coworkers want to go to Paris together.
+8 coworkers want to go to Paris together.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:43_high_low]]
+A book club is choosing the next book to read. After the 10 members vote, it seems they definitely may read “Great Expectations”.
+[[Choices]]
+6 members say they definitely want to read "Great Expectations" next.
+8 members say they may want to read "Great Expectations" next.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:44_low_high]]
+10 cooks at a restaurant are discussing next week’s menu. It seems they may definitely serve pork chops next week.
+[[Choices]]
+6 cooks decide they are definitely for serving pork chops.
+8 cooks decide they may be for serving pork chops.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:45_high]]
+10 children discuss what to do after school. After they discuss their options, they are definitely going to choose to play freeze tag.
+[[Choices]]
+6 children think playing freeze tag is the best thing to do after school.
+8 children think playing freeze tag is the best thing to do after school.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:46_low]]
+10 astronomers discover a new star and discuss what to name it. After casting their votes, they might name the star Caerus.
+[[Choices]]
+6 astronomers think Caerus is the best name for the star.
+8 astronomers think Caerus is the best name for the star.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:47_high_low]]
+A group of 10 investors discuss which industry to invest in. By the end of the debate, it seems they probably might invest in solar energy.
+[[Choices]]
+6 investors decide they probably want to invest in solar energy.
+7 investors decide they might want to invest in solar energy.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:48_low_high]]
+10 committee members are deciding the name for a new park. After discussing, they might probably name the new park after President Obama.
+[[Choices]]
+6 members claim they are probably going to vote to name the park after President Obama.
+7 members claim they might vote to name the park after President Obama.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:38_filler_no]]
+The 10 members of the local swim team are deciding when to hold their first practice session of the season. After discussing, they decide that it is definitely not going to be on Thursday.
+[[Choices]]
+2 members prefer not to have the meeting on Thursday.
+8 members prefer not to have the meeting on Thursday.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:39_filler_no]]
+10 classmates get together to choose what kind of pizza they are going to order for their class party. After discussing, it seems unlikely that they are going to order Hawaiian.
+[[Choices]]
+1 classmate wants Hawaiian.
+7 classmates want Hawaiian.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:40_filler_no]]
+When the school decides to redecorate the garden, they ask 10 teachers if they want daisies or petunias. After an hour of discussion, they are still uncertain which flower is more popular.
+[[Choices]]
+5 teachers want petunias.
+6 teachers want daisies.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:41_filler_no]]
+An art teacher with 10 students in her class asks if they want to paint or make clay sculptures today. After some discussion, it is doubtful that they are going to make clay sculptures.
+[[Choices]]
+3 students want to paint.
+8 students want to paint.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:42_filler_no]]
+10 family members organizing a family reunion take a poll to see if they want to meet in Yosemite or at Lake Tahoe. After the poll, they don't think they are going to meet in Yosemite.
+[[Choices]]
+4 family members want to go to Yosemite.
+8 family members want to go to Yosemite.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:43_filler_no]]
+A newspaper reporter asks 10 voters at the poll which of the two candidates they are voting for, the Democrat or the Republican. After asking the voters, the reporter doesn't know which candidate is going to win.
+[[Choices]]
+2 voters say they are voting for the Democrat.
+6 voters say they are voting for the Republican.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:44_filler_no]]
+Joe asks the 10 people at a party if they want to listen to hip-hop or country music. After some discussion, he doubts that they want to listen to country.
+[[Choices]]
+1 person wants to listen to country.
+7 people want to listen to country.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:45_filler_no]]
+10 English teachers discuss what books they want to teach in their classes next year. After discussion, it is unlikely that they are going to teach "Tom Sawyer".
+[[Choices]]
+7 teachers do want to teach "Tom Sawyer".
+8 teachers don't want to teach "Tom Sawyer".
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:46_filler_no]]
+For the last meeting of the film club for the year, 10 members talk about whether to watch "A New Hope" or "Jurassic Park". After an hour of discussion, they are still undecided.
+[[Choices]]
+5 members want to watch "A New Hope".
+8 members want to watch "Jurassic Park".
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:47_filler_no]]
+While planning her birthday party, Brittany asks 10 of her friends if they want to have chocolate or rainbow cake. After asking them, she is undecided if she should get chocolate cake.
+[[Choices]]
+1 friend wants chocolate cake.
+5 friends want chocolate cake.
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Horizontal]]
+[[ID:48_filler_no]]
+10 friends are discussing the latest episode of their favorite show, and start debating whether or not the villain is going to die at the end of the season. After the discussion, it seems unlikely that the villain is going to die.
+[[Choices]]
+2 friends think the villain is going to die.
+7 friends think the villain is going to live.
+[[PageBreak]]
