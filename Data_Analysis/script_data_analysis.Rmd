@@ -1,7 +1,7 @@
 ---
 title: "Data_analysis"
 author: "Harvey"
-date: "9/9/2021"
+date: "28/2/2023"
 output: html_document
 ---
 
@@ -30,14 +30,18 @@ This section contains the code use to plot figures and perform statistical analy
 ```{r cars}
 # download the data file from github
 data_1<-read_csv("1_stats_ready.csv")
-summary(data_1)
+# delete the information of order and parenthetical manipulation in the item column
+# as a result the item column refers to the id of each item
+itemID <- sub("_.*","",data_1$Item)
+data_1$Item <-itemID
+itemID <- sub("X","",data_1$Item)
+data_1$Item <-itemID
 # change the data type of the columns
 data_1$Parenthesis <- as.factor(data_1$Parenthesis)
 data_1$Order <- as.factor(data_1$Order)
 data_1$Item <- as.factor(data_1$Item)
 data_1$ID <- as.factor (data_1$ID)
 data_1$Modal_Label <- as.factor (data_1$Modal_Label)
-summary(data_1)
 # delete filler items
 data_1 <- data_1 %>% filter(!is.na(Order))
 # reorder factor for plotting 
@@ -65,6 +69,26 @@ ggplot(data=data_mean, mapping= aes(x=Order,y=mean_rating, fill= Parenthesis))+
 ggsave("bar_plot_exp1_condition.png")
 
 ```
+```{r }
+# Plot the mean rating score across conditions with each facet being an item
+# calculate the statistics
+data_mean <- data_1 %>% group_by(Order,Item) %>% summarize(mean_rating=mean(Rating),sd_rating=sd(Rating),se=sd(Rating) / sqrt(length(Rating)))
+# making a bar plot
+ggplot(data=data_mean, mapping= aes(x=Order,y=mean_rating))+
+  geom_bar(stat = "identity",position = "dodge")+
+  scale_y_continuous(breaks = seq(from =50, to = 100, by = 20))+
+  scale_x_discrete(labels=c("H","HL","LH","L"))+
+  # geom_col(width = 0.6,stat = "identity",position = "dodge",fill="steelblue")+
+  geom_errorbar(aes(ymin=mean_rating-se, ymax=mean_rating+se),width=.5,position=position_dodge(.9))+
+  labs(x = "Modal Arrangement Conditions", y = expression(paste("Probability Rating")))+
+  coord_cartesian(ylim = c(50,95))+
+facet_wrap("Item",nrow = 4, ncol = 8 )
+
+ggsave("bar_plot_exp1_condition_item.png")
+
+```
+
+
 ##### 1.1.2 plot the probability rating of different epistemic expressions
 ```{r }
 # plot the mean rating score across modals
@@ -108,12 +132,12 @@ ggplot(data1_sub_mean, mapping= aes(x=fct_rev(fct_reorder(epistemic_expression,m
         axis.title.y = element_text(color = "grey20", size = 12, angle = 0, hjust = -0.9, vjust = 0.45, face = "plain"))
 ggsave("bar_plot_exp1_modals.png")
 ```
-#### 1.2 Statistical testing
-##### 1.2.1 Maximal model with high-low condition as the baseline
+#### 1.2 Statistical analysis
+
 ```{r }
 # Since the dependent variable, rating scores, was bounded between 0 and 100, we analyzed the data on the logit scale rather than probability scale.
 # re-level condition, rescale the dependent variable (to 0~1)
-data_1$Order<- factor(data_1$Order, levels = c("High-Low","Low-High","High","Low"))
+
 data_1$rating_rescale <- data_1$Rating/100
 
 # recode the scale variable in which 1 is coded as 0.999, while 0 is coded as 0.001 (following Verkuilen, Smithson, 2012)
@@ -124,145 +148,120 @@ data_1$rating_logit <- log(data_1$rating_recode/(1-data_1$rating_recode))
 
 ```
 
+##### 1.2.1 The compositionality of nested epistemic expressions and the order effect
+
+This section contains statistical analysis with regard to two research questions 1) the compositionality of the nested epistemic expressions: what is the relation between the meaning of a nested epistemic expression and the
+meaning of the component modals 2) the order effect: whether or not the order of the two modals has an effect on comprehenders’ interpretation of the nested expressions.
+
+To answer these questions, we build models to test the effect of different modal combinations ("High-Low","Low-High","High","Low") on the probability rating. The first model uses "High-Low" combination as the baseline.
+
 ```{r}
 # building a linear regression model with high-low condition as the baseline
-brm_max_HL_1 <- brm (rating_logit ~ 1 + Order*Parenthesis + 
-                      (1+ Order*Parenthesis|ID) + 
-                      (1+ Order*Parenthesis|Item),
+data_1$Order<- factor(data_1$Order, levels = c("High-Low","Low-High","High","Low"))
+
+brm_exp1_q12_1 <- brm (rating_logit ~ 1 + Order + 
+                      (1+ Order|ID) + 
+                      (1+ Order|Item),
                     data = data_1,
-                    iter = 5000,
+                    iter = 8000,
                     control = list(adapt_delta = 0.99),
-                    seed = 123)
-summary(brm_max_HL_1)
+                    seed = 1)
+summary(brm_exp1_q12_1)
+# save the output of fixed effect
+write.csv(summary(brm_exp1_q12_1)$fixed, "brm_exp1_q12_1.csv")
 
-```
-```{r}
-sum_mod_exp1_1 <- summary(brm_max_HL_1)
-write.csv(sum_mod_exp1_1$fixed, "sum_mod_exp1_1.csv")
-
-```
-
-```{r}
-# create a table for model output
-output <- summary(brm_max_HL_1)$fixed
-output <- output[1:5,1:4]
-row.names(output) <- c('Intercept', 'Low-High', 'High', 'Low', 'With-Parenthesis')
-mytable_exp1_1 <- kable(
+# create a latex table for model output
+output <- summary(brm_exp1_q12_1)$fixed
+output <- output[1:4,1:4]
+row.names(output) <- c('Intercept', 'Low-High', 'High', 'Low')
+tb_exp1_q12_1 <- kable(
   output,
   digits = 2,
   align = c('c','c','c','c','c'),
   format = "latex"
  )
+# save the latex table output in a text file
+writeLines(tb_exp1_q12_1,"tb_exp1_q12_1.txt")
 ```
 
-##### 1.2.2 Maximal model with Low-High condition as the baseline
+The second model follows the same structure but uses "Low-High" combination as the baseline
 
 ```{r}
 # building a linear regression model with Low-High condition as the baseline
 data_1$Order<- factor(data_1$Order, levels = c("Low-High","High-Low","High","Low"))
-brm_max_LH_1 <- brm (rating_logit ~ 1 + Order*Parenthesis + 
-                      (1+ Order*Parenthesis|ID) + 
-                      (1+ Order*Parenthesis|Item),
+
+brm_exp1_q12_2 <- brm (rating_logit ~ 1 + Order + 
+                      (1+ Order|ID) + 
+                      (1+ Order|Item),
                     data = data_1,
-                    iter = 5000,
+                    iter = 8000,
                     control = list(adapt_delta = 0.99),
-                    seed = 123)
-summary(brm_max_LH_1)
-sum_mod_exp1_2 <- summary(brm_max_LH_1)
-write.csv(sum_mod_exp1_2$fixed, "sum_mod_exp1_2.csv")
+                    seed = 1)
+summary(brm_exp1_q12_2)
+
+# save the output of fixed effect
+write.csv(summary(brm_exp1_q12_2)$fixed, "brm_exp1_q12_2.csv")
+
+# create a latex table for model output
+output <- summary(brm_exp1_q12_2)$fixed
+output <- output[1:4,1:4]
+row.names(output) <- c('Intercept', 'High-Low', 'High', 'Low')
+tb_exp1_q12_2 <- kable(
+  output,
+  digits = 2,
+  align = c('c','c','c','c','c'),
+  format = "latex"
+ )
+# save the latex table output in a text file
+writeLines(tb_exp1_q12_2,"tb_exp1_q12_2.txt")
 
 ```
+
+##### 1.2.2 The effect of word order with regard to the parenthesis
+
+This section analyzes the effect of modal word order with regard to the presence of parenthesis, answering the following question: does the distance of the component modals influence the way in which nested epistemic expressions are processed?
+
+To answer this question, we build statistical models with nested modal data only. The first model includes modal order and the presence of the parenthesis and their interaction as fixed effects, while participants and items are treated as random effects. The second model follows almost the same structure, but the interaction is dropped. A model comparison is conducted to test if the data is better explained with an interaction.
 
 ```{r}
-# create a table for model output
-output <- summary(brm_max_LH_1)$fixed
-output <- output[1:5,1:4]
-row.names(output) <- c('Intercept', 'High-Low', 'High', 'Low', 'With-Parenthesis')
-mytable_exp1_2 <- kable(
-  output,
-  digits = 2,
-  align = c('c','c','c','c','c'),
-  format = "latex"
- )
-```
 
-##### 1.2.3 Maximal model with only single modal conditions
-```{r }
-# High modal condition as the baseline
-data_1_single <- data_1 %>% filter(data_1$Order == "High" | data_1$Order == "Low")
-brm_exp1_single <- brm (rating_logit ~ 1 + Order*Parenthesis + 
-                      (1+ Order*Parenthesis|ID) + 
-                      (1+ Order*Parenthesis|Item),
-                    data = data_1_single,
-                    iter = 5000,
-                    control = list(adapt_delta = 0.99),
-                    seed = 123)
-summary(brm_exp1_single)
-sum_mod_exp1_3 <- summary(brm_exp1_single)
-write.csv(sum_mod_exp1_3$fixed, "sum_mod_exp1_3.csv")
-# create a table for model output
-output <- summary(brm_exp1_single)$fixed
-output <- output[,1:4]
-row.names(output) <- c('Intercept', 'Low', 'With-Parenthesis', 'Low:Parenthesis')
-mytable_exp1_3 <- kable(
-  output,
-  digits = 2,
-  align = c('c','c','c','c','c'),
-  format = "latex"
- )
-```
+# subset the data frame keeping only the data in nested modal conditions
 
-```{r}
-# Low modal condition as the baseline
-data_1_single$Order <- factor(data_1_single$Order, levels = c("Low","High"))
-brm_exp1_single_Low <- brm (rating_logit ~ 1 + Order*Parenthesis + 
-                      (1+ Order*Parenthesis|ID) + 
-                      (1+ Order*Parenthesis|Item),
-                    data = data_1_single,
-                    iter = 5000,
-                    control = list(adapt_delta = 0.99),
-                    seed = 123)
-summary(brm_exp1_single_Low)
-sum_mod_exp1_3_low <- summary(brm_exp1_single_Low)
-write.csv(sum_mod_exp1_3_low$fixed, "sum_mod_exp1_3_low.csv")
-# create a table for model output
-output <- summary(brm_exp1_single_Low)$fixed
-output <- output[,1:4]
-row.names(output) <- c('Intercept', 'High', 'With-Parenthesis', 'High:Parenthesis')
-mytable_exp1_3_low <- kable(
-  output,
-  digits = 2,
-  align = c('c','c','c','c','c'),
-  format = "latex"
- )
+data_1_double <- data_1 %>% filter(data_1$Order == "Low-High" | data_1$Order == "High-Low")
 
-```
-##### 1.2.4 Maximal model with only double modal conditions
-```{r }
-data_1_double <- data_1 %>% filter(data_1$Order == "High-Low" | data_1$Order == "Low-High")
-brm_exp1_double <- brm (rating_logit ~ 1 + Order*Parenthesis + 
+# set "High-Low" and the absence of the parentheticals as the baselines for comparision
+
+data_1_double$Order<- factor(data_1_double$Order, levels = c("High-Low","Low-High"))
+data_1_double$Parenthesis <- factor(data_1_double$Parenthesis, levels = c("No","Yes"))
+
+# the first model includes the interaction between order and parenthesis
+brm_exp1_q3_1 <- brm (rating_logit ~ 1 + Order*Parenthesis + 
                       (1+ Order*Parenthesis|ID) + 
                       (1+ Order*Parenthesis|Item),
                     data = data_1_double,
-                    iter = 5000,
+                    iter = 8000,
                     control = list(adapt_delta = 0.99),
-                    seed = 123)
-summary(brm_exp1_double)
-sum_mod_exp1_4 <- summary(brm_exp1_double)
-write.csv(sum_mod_exp1_4$fixed, "sum_mod_exp1_4.csv")
+                    seed = 1)
+summary(brm_exp1_q3_1)
 
-# create a table for model output
-output <- summary(brm_exp1_double)$fixed
-output <- output[,1:4]
-row.names(output) <- c('Intercept', 'High-Low', 'With-Parenthesis', 'High-Low: Parenthesis')
-mytable_exp1_4 <- kable(
+# save the output of fixed effect
+write.csv(summary(brm_exp1_q3_1)$fixed, "brm_exp1_q3_1.csv")
+
+# create a latex table for model output
+output <- summary(brm_exp1_q3_1)$fixed
+output <- output[1:4,1:4]
+row.names(output) <- c('Intercept', 'Low-High', 'With-Parenthetical', 'Low-High-With-Parenthetical')
+tb_exp1_q3_1 <- kable(
   output,
   digits = 2,
   align = c('c','c','c','c','c'),
   format = "latex"
  )
-```
+# save the latex table output in a text file
+writeLines(tb_exp1_q3_1,"tb_exp1_q3_1.txt")
 
+
+```
 
 ### Experiment 2
 This section contains the code use to plot figures and perform statistical analysis for experiment 2
@@ -270,14 +269,16 @@ This section contains the code use to plot figures and perform statistical analy
 ```{r cars}
 # download the data file from github
 data_2<-read_csv("2_stats_ready.csv")
-summary(data_2)
+# delete the information of order and parenthetical manipulation in the item column
+# as a result the item column refers to the id of each item
+itemID2 <- sub("_.*","",data_2$Item)
+data_2$Item <- itemID2
 # change the data type of the columns
 data_2$Parenthesis <- as.factor(data_2$Parenthesis)
 data_2$Order <- as.factor(data_2$Order)
 data_2$Item <- as.factor(data_2$Item)
 data_2$ID <- as.factor (data_2$ID)
 data_2$Modal_Label <- as.factor (data_2$Modal_Label)
-summary(data_2)
 # delete filler items
 data_2 <- data_2 %>% filter(!is.na(Order))
 # reorder factor for plotting 
@@ -306,6 +307,25 @@ ggplot(data=data_mean, mapping= aes(x=Order,y=mean_rating, fill= Parenthesis))+
 ggsave("bar_plot_exp2_condition.png")
 
 ```
+```{r }
+# Plot the mean rating score across conditions with each facet being an item
+# calculate the statistics
+data_mean2 <- data_2 %>% group_by(Order,Item) %>% summarize(mean_rating=mean(Rating),sd_rating=sd(Rating),se=sd(Rating) / sqrt(length(Rating)))
+# making a bar plot
+ggplot(data=data_mean2, mapping= aes(x=Order,y=mean_rating))+
+  geom_bar(stat = "identity",position = "dodge")+
+  scale_y_continuous(breaks = seq(from =50, to = 100, by = 20))+
+  scale_x_discrete(labels=c("H","HL","LH","L"))+
+  # geom_col(width = 0.6,stat = "identity",position = "dodge",fill="steelblue")+
+  geom_errorbar(aes(ymin=mean_rating-se, ymax=mean_rating+se),width=.5,position=position_dodge(.9))+
+  labs(x = "Modal Arrangement Conditions", y = expression(paste("Probability Rating")))+
+  coord_cartesian(ylim = c(45,95))+
+facet_wrap("Item",nrow = 4, ncol = 8 )
+
+ggsave("bar_plot_exp1_condition_item2.png")
+
+```
+
 ##### 2.1.2 plot the probability rating of different epistemic expressions
 ```{r }
 # plot the mean rating score across modals
@@ -350,7 +370,7 @@ ggplot(data2_sub_mean, mapping= aes(x=fct_rev(fct_reorder(epistemic_expression,m
 ggsave("bar_plot_exp2_modals.png")
 ```
 #### 2.2 Statistical testing
-##### 2.2.1 Maximal model with high-low condition as the baseline
+
 ```{r }
 # Since the dependent variable, rating scores, was bounded between 0 and 100, we analyzed the data on the logit scale rather than probability scale.
 # re-level condition, rescale the dependent variable (to 0~1)
@@ -365,137 +385,124 @@ data_2$rating_logit <- log(data_2$rating_recode/(1-data_2$rating_recode))
 
 ```
 
+##### 2.2.1 The compositionality of nested epistemic expressions and the order effect
+
+This section contains statistical analysis with regard to two research questions 1) the compositionality of the nested epistemic expressions: what is the relation between the meaning of a nested epistemic expression and the
+meaning of the component modals 2) the order effect: whether or not the order of the two modals has an effect on comprehenders’ interpretation of the nested expressions.
+
+To answer these questions, we build models to test the effect of different modal combinations ("High-Low","Low-High","High","Low") on the probability rating. The first model uses "High-Low" combination as the baseline.
+
 ```{r}
 # building a linear regression model with high-low condition as the baseline
-brm_max_HL_2 <- brm (rating_logit ~ 1 + Order*Parenthesis + 
-                      (1+ Order*Parenthesis|ID) + 
-                      (1+ Order*Parenthesis|Item),
-                    data = data_2,
-                    iter = 5000,
-                    control = list(adapt_delta = 0.99),
-                    seed = 123)
-summary(brm_max_HL_2)
-sum_mod_exp2_1 <- summary(brm_max_HL_2)
-write.csv(sum_mod_exp2_1$fixed, "sum_mod_exp2_1.csv")
+data_2$Order<- factor(data_2$Order, levels = c("High-Low","Low-High","High","Low"))
 
-# create a table for model output
-output <- summary(brm_max_HL_2)$fixed
-output <- output[1:5,1:4]
-row.names(output) <- c('Intercept', 'Low-High', 'High', 'Low', 'With-Parenthesis')
-mytable_exp2_1 <- kable(
+brm_exp2_q12_1 <- brm (rating_logit ~ 1 + Order + 
+                      (1+ Order|ID) + 
+                      (1+ Order|Item),
+                    data = data_2,
+                    iter = 8000,
+                    control = list(adapt_delta = 0.99),
+                    seed = 1)
+summary(brm_exp2_q12_1)
+# save the output of fixed effect
+write.csv(summary(brm_exp2_q12_1)$fixed, "brm_exp2_q12_1.csv")
+
+# create a latex table for model output
+output <- summary(brm_exp2_q12_1)$fixed
+output <- output[1:4,1:4]
+row.names(output) <- c('Intercept', 'Low-High', 'High', 'Low')
+tb_exp2_q12_1 <- kable(
   output,
   digits = 2,
   align = c('c','c','c','c','c'),
   format = "latex"
  )
+# save the latex table output in a text file
+writeLines(tb_exp2_q12_1,"tb_exp2_q12_1.txt")
 ```
 
-##### 2.2.2 Maximal model with Low-High condition as the baseline
+The second model follows the same structure but uses "Low-High" combination as the baseline
 
 ```{r}
 # building a linear regression model with Low-High condition as the baseline
 data_2$Order<- factor(data_2$Order, levels = c("Low-High","High-Low","High","Low"))
-brm_max_LH_2 <- brm (rating_logit ~ 1 + Order*Parenthesis + 
-                      (1+ Order*Parenthesis|ID) + 
-                      (1+ Order*Parenthesis|Item),
+
+brm_exp2_q12_2 <- brm (rating_logit ~ 1 + Order + 
+                      (1+ Order|ID) + 
+                      (1+ Order|Item),
                     data = data_2,
-                    iter = 5000,
-                    control = list(adapt_delta = 0.99),
-                    seed = 123)
-summary(brm_max_LH_2)
-sum_mod_exp2_2 <- summary(brm_max_LH_2)
-write.csv(sum_mod_exp2_2$fixed, "sum_mod_exp2_2.csv")
+                    iter = 12000,
+                    warmup = 6000,
+                    control = list(adapt_delta = 0.99, max_treedepth = 15),
+                    seed = 1)
+summary(brm_exp2_q12_2)
 
-# create a table for model output
-output <- summary(brm_max_LH_2)$fixed
-output <- output[1:5,1:4]
-row.names(output) <- c('Intercept', 'High-Low', 'High', 'Low', 'With-Parenthesis')
-mytable_exp2_2 <- kable(
+# save the output of fixed effect
+write.csv(summary(brm_exp2_q12_2)$fixed, "brm_exp2_q12_2.csv")
+
+# create a latex table for model output
+output <- summary(brm_exp2_q12_2)$fixed
+output <- output[1:4,1:4]
+row.names(output) <- c('Intercept', 'High-Low', 'High', 'Low')
+tb_exp2_q12_2 <- kable(
   output,
   digits = 2,
   align = c('c','c','c','c','c'),
   format = "latex"
  )
+# save the latex table output in a text file
+writeLines(tb_exp2_q12_2,"tb_exp2_q12_2.txt")
+
 ```
 
-##### 2.2.3 Maximal model with only single modal conditions
-```{r }
-data_2_single <- data_2 %>% filter(data_2$Order == "High" | data_2$Order == "Low")
-brm_exp2_single <- brm (rating_logit ~ 1 + Order*Parenthesis + 
-                      (1+ Order*Parenthesis|ID) + 
-                      (1+ Order*Parenthesis|Item),
-                    data = data_2_single,
-                    iter = 5000,
-                    control = list(adapt_delta = 0.99),
-                    seed = 123)
-summary(brm_exp2_single)
-sum_mod_exp2_3 <- summary(brm_exp2_single)
-write.csv(sum_mod_exp2_3$fixed, "sum_mod_exp2_3.csv")
 
-# create a table for model output
-output <- summary(brm_exp2_single)$fixed
-output <- output[,1:4]
-row.names(output) <- c('Intercept', 'Low', 'With-Parenthesis', 'Low:Parenthesis')
-mytable_exp2_3 <- kable(
-  output,
-  digits = 2,
-  align = c('c','c','c','c','c'),
-  format = "latex"
- )
-```
+##### 2.2.2 The effect of word order with regard to the parenthesis
+
+This section analyzes the effect of modal word order with regard to the presence of parenthesis, answering the following question: does the distance of the component modals influence the way in which nested epistemic expressions are processed?
+
+To answer this question, we build statistical models with nested modal data only. The first model includes modal order and the presence of the parenthesis and their interaction as fixed effects, while participants and items are treated as random effects. The second model follows almost the same structure, but the interaction is dropped. A model comparison is conducted to test if the data is better explained with an interaction.
 
 ```{r}
-# Low modal condition as the baseline
-data_2_single$Order <- factor(data_2_single$Order, levels = c("Low","High"))
-brm_exp2_single_Low <- brm (rating_logit ~ 1 + Order*Parenthesis + 
-                      (1+ Order*Parenthesis|ID) + 
-                      (1+ Order*Parenthesis|Item),
-                    data = data_2_single,
-                    iter = 5000,
-                    control = list(adapt_delta = 0.99),
-                    seed = 123)
-summary(brm_exp2_single_Low)
-sum_mod_exp2_3_low <- summary(brm_exp2_single_Low)
-write.csv(sum_mod_exp2_3_low$fixed, "sum_mod_exp2_3_low.csv")
-# create a table for model output
-output <- summary(brm_exp2_single_Low)$fixed
-output <- output[,1:4]
-row.names(output) <- c('Intercept', 'High', 'With-Parenthesis', 'High:Parenthesis')
-mytable_exp2_3_low <- kable(
-  output,
-  digits = 2,
-  align = c('c','c','c','c','c'),
-  format = "latex"
- )
 
+# subset the data frame keeping only the data in nested modal conditions
 
-```
+data_2_double <- data_2 %>% filter(data_2$Order == "Low-High" | data_2$Order == "High-Low")
 
-##### 2.2.4 Maximal model with only double modal conditions
-```{r }
-data_2_double <- data_2 %>% filter(data_2$Order == "High-Low" | data_2$Order == "Low-High")
-brm_exp2_double <- brm (rating_logit ~ 1 + Order*Parenthesis + 
+# set "High-Low" and the absence of the parentheticals as the baselines for comparision
+
+data_2_double$Order<- factor(data_2_double$Order, levels = c("High-Low","Low-High"))
+data_2_double$Parenthesis <- factor(data_2_double$Parenthesis, levels = c("No","Yes"))
+
+# the first model includes the interaction between order and parenthesis
+brm_exp2_q3_1 <- brm (rating_logit ~ 1 + Order*Parenthesis + 
                       (1+ Order*Parenthesis|ID) + 
                       (1+ Order*Parenthesis|Item),
                     data = data_2_double,
-                    iter = 5000,
+                    iter = 8000,
                     control = list(adapt_delta = 0.99),
-                    seed = 123)
-summary(brm_exp2_double)
-sum_mod_exp2_4 <- summary(brm_exp2_double)
-write.csv(sum_mod_exp2_4$fixed, "sum_mod_exp2_4.csv")
+                    seed = 1)
+summary(brm_exp2_q3_1)
 
-# create a table for model output
-output <- summary(brm_exp2_double)$fixed
-output <- output[,1:4]
-row.names(output) <- c('Intercept', 'High-Low', 'With-Parenthesis', 'High-Low: Parenthesis')
-mytable_exp2_4 <- kable(
+# save the output of fixed effect
+write.csv(summary(brm_exp2_q3_1)$fixed, "brm_exp2_q3_1.csv")
+
+# create a latex table for model output
+output <- summary(brm_exp2_q3_1)$fixed
+output <- output[1:4,1:4]
+row.names(output) <- c('Intercept', 'Low-High', 'With-Parenthetical', 'Low-High-With-Parenthetical')
+tb_exp2_q3_1 <- kable(
   output,
   digits = 2,
   align = c('c','c','c','c','c'),
   format = "latex"
  )
+# save the latex table output in a text file
+writeLines(tb_exp2_q3_1,"tb_exp2_q3_1.txt")
+
+
 ```
+
+
 ### Experiment 3
 This section contains the code use to plot figures and perform statistical analysis for experiment 3
 #### read dataframe and code variables
@@ -582,20 +589,20 @@ g2 <- ggplot(data = mydata2,
     size = 0.2
   )+
   scale_y_continuous(name="Logit of choosing 'high-low' options", limits=c(0, 10))+
-  annotate("text", x = 1.8, y=5, label = "β = -0.27, 95% CI [-0.58, 0.03]")
+  annotate("text", x = 1.8, y=5, label = "β = -0.27, 95% CI [-0.57, 0.03]")
 
 # plotting: single modal conditions  
 mydata1$condition_recode <- ifelse(mydata1$condition == "high", 1,2)
-mydata1$logit <- ifelse(mydata1$condition == "high", 5.32,0.26)
+mydata1$logit <- ifelse(mydata1$condition == "high", 5.31,0.25)
 g1 <- ggplot(data = mydata1,
        aes(x = condition, y = logit)) +
   geom_point(alpha = .1, size = 2)+
   geom_segment(
-    aes(x = 1,y = 5.32, xend = 2,yend = 0.26),
+    aes(x = 1,y = 5.31, xend = 2,yend = 0.25),
     size = 0.2
   )+
   scale_y_continuous(name="Logit of choosing 'high' options", limits=c(0, 10))+
-  annotate("text", x = 1.8, y=5, label = "β = -5.06, 95% CI [-6.66, -3.72]")
+  annotate("text", x = 1.8, y=5, label = "β = -5.06, 95% CI [-6.65, -3.71]")
 ggarrange(g1,g2, ncol = 2)
 ggsave("line_plot_exp3.png")
 
